@@ -1,0 +1,18 @@
+<body class="pages-body">
+<%- include("partials/header.ejs")  %>
+
+<main class="container">
+    <h1 class="open-sans-bold white-text create-title">Create new blog</h1>
+    <form action="/create" method="POST">
+      <input name="title" type="text" class="input-areas" placeholder="New Title" data-ddg-inputtype="identities.fullName">
+      <textarea name="content" class="input-areas" placeholder="Enter your text"></textarea>
+      <input class= btn-create-post type="submit" value="Post blog">
+    </form>
+    <form action="/" method="GET">
+        <button class= btn-cancel type="submit">Cancel</button>
+    </form>
+</main>
+
+
+
+<%- include("partials/footer.ejs")  %>

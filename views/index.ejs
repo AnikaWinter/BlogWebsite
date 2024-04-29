@@ -1,0 +1,33 @@
+<%- include("partials/header.ejs")  %>
+<body class="main-body">
+
+
+<div id="blurr-div">
+    <div class="left-column">
+        <h1 class="open-sans-bold white-text"> Anika Winter </h1>
+        <p class="p-margin open-sans-normal white-text">Enthusiastic, Believer, Deep</p>
+
+        <form action="/create" method="GET">
+            <button class="btn-new-blog" type="submit">Create new blog</button>
+        </form>
+    </div>
+    
+
+    <div class="right-column">
+        <% if(locals.posts) { %>
+            <div class="div-center">
+                <% for(var i=0; i<posts.length ; i++){ //max 8 %> 
+                    <form action="/read" method="GET">
+                        <button type="submit" class="white-text open-sans-normal btn-titles"><%= posts[i].title %></button>
+                    </form>
+                    <hr class="hr-line"/>
+                <% } %>
+            </div>
+        <% } %> 
+        <form action="/edit" method="GET">
+            <button type="submit" class="btn-edit">Edit</button>
+        </form>
+    </div>
+</div>
+    
+<%- include("partials/footer.ejs")  %>

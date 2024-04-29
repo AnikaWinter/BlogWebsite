@@ -1,0 +1,25 @@
+<%- include("partials/header.ejs")  %>
+<body class="pages-body">
+
+
+
+
+<form action="/" method="GET">
+    <button class="btn-home margin-left" type="submit">Return Home</button>
+</form>
+
+<div id="read-posts">
+    <% if(locals.posts) { %>
+        
+            <% for(var i=0; i<posts.length ; i++){ %>
+                <div id="read-individual">
+                    <h2 class="open-sans-bold white-text"><%= posts[i].title %></h2>
+                    <p class="open-sans-normal white-text"><%= posts[i].content %></p>
+                    <small class="white-text"><%= posts[i].date %></small>
+                </div>
+                <hr class="hr-line"/>
+            <% } %>
+    <% } %> 
+</div>
+
+<%- include("partials/footer.ejs")  %> 
